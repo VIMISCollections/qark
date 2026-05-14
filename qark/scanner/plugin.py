@@ -24,8 +24,11 @@ def get_plugin_source(category=None):
     :param category: plugin category, subdirectory under `plugins/`
     :return: `PluginBase.PluginSource`
     """
+    #cur file path/../plugins
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "plugins")
     if category is not None:
+        #append relevant plugin to path above
+        #cur file path/../plugins/category
         path = os.path.join(path, category)
 
     try:

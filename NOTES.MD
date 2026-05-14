@@ -45,25 +45,35 @@ For now, I'll focus on the ones that have 'webview' in tags/title:
 2. Vulnerabilities detected by AndroBugs Framework,https://github.com/CellularPrivacy/Android-IMSI-Catcher-Detector/issues/650,CellularPrivacy/Android-IMSI-Catcher-Detector,Unsafe addJavascriptInterface Usage,"bug, security_issue" 
 (release v0.1.36-alpha-b00 has the bug)
 
+**COULD NOT FIND WEBVIEW IN THIS RELEASE CODE!!**
+
 Apk gives error:
 javalang.tokenizer.LexerError: Unterminated character/string literal at "'", line 13: public /* varargs */ akr(int n2, boolean bl2, String[] arrstring, org.benf.cfr.reader.util.ConfusedCFRException: VARARGS method doesn't have an array as last arg!!
 
 Issue raised on Qark github (2019), but never resolved:
 https://github.com/linkedin/qark/issues/317
 
-**SkyTube-Oss-2.978.apk**
-4. "Find some crashes, and hope they can help you to debug",https://github.com/SkyTubeTeam/SkyTube/issues/956,SkyTubeTeam/SkyTube,Debug Settings Left Enabled in Production | Lifecycle-Related WebView Crash,"bug, incomplete",
-(release Version 2.978. Issue from april 9 2021. Release from March 22 2021)
+Managed to run with java folder!
 
-qark --java ../../SkyTube-2.978
-Took 40~ seconds.
+**SkyTube-Oss-2.977.apk**
+4. "Find some crashes, and hope they can help you to debug",https://github.com/SkyTubeTeam/SkyTube/issues/956,SkyTubeTeam/SkyTube,Debug Settings Left Enabled in Production | Lifecycle-Related WebView Crash,"bug, incomplete",
+(release Version 2.977. Issue from april 9 2021. Release from jan 16 2021)
+**RAN W. WRONG RELEASE 2.978 BUT WAS SUPPOSED TO BE 2.977**
+It was not possible for me to download the java source code (both zip and tar-files failed for unknown reasons. I tried again a different day and it still fails. Trying with the APKs instead)
+
+qark --apk ../../apks/SkyTube-Oss-2.977.apk
 
 Tried to run Qark w. apk, but didnt manage to finish within an hour-ish, so aborted.
+
+XXXXXXXXXXXXXXXXXXXX
 
 **Metrolist.apk**
 5. v13.0.0 PLAYBACK/CRASH ISSUES MEGATHREAD,https://github.com/MetrolistGroup/Metrolist/issues/2556,MetrolistGroup/Metrolist,Debug Settings Left Enabled in Production | Lifecycle-Related WebView Crash,"bug, help wanted, SEVERE ISSUE"
 (release version 12.12.4. There's a lot of different assets for this release, so I'm just assuming I've picked the right .apk, but not sure.
 GOT ERROR: javalang.tokenizer.LexerError: Unterminated character/string literal at "'", line 13: public /* varargs */ akr(int n2, boolean bl2, String[] arrstring, org.benf.cfr.reader.util.ConfusedCFRException: VARARGS method doesn't have an array as last arg!!)
+
+**COULD NOT FIND WEBVIEW IN THIS RELEASE CODE!!**
+At least the newest commit has WebView, but the version specified in the issue does not!
 
 qark --java ../../Metrolist-12.12.4
 Took 60~ sec.
@@ -92,7 +102,7 @@ qark --java ../../openhab-android-3.0.1-release
 
 **OuterTune-0.6.3-universal-release.apk**
 11. Unexpected error 2000 playing songs when logged in,https://github.com/OuterTune/OuterTune/issues/140,OuterTune/OuterTune,Debug Settings Left Enabled in Production,bug
-(release 0.6.3. Issue dec 17 2024)
+(release 0.6.3 2 nov 2024. Issue dec 17 2024)
 
 qark --java ../../OuterTune-0.6.3
 
@@ -135,7 +145,7 @@ qark --java ../../android-youtube-player-12.1.2
 
 **X**
 18. No Video Will play (any video),https://github.com/TeamNewPipe/NewPipe/issues/7734,TeamNewPipe/NewPipe,Debug Settings Left Enabled in Production,"bug, ASAP, youtube"
-(feb 1 2022. Release 0.21.05)
+(feb 1 2022. Release v0.21.5)
 
 qark --java ../../NewPipe-0.21.5
 
@@ -147,23 +157,28 @@ qark --java ../../jellyfin-android-2.3.0
 
 **X**
 23. Authentication fails when opened in external browser,https://github.com/home-assistant/android/issues/6375,home-assistant/android,Attacker-Controlled URL Loaded in WebView,bug
-(Users complain about a 'bug', some functionality not working anymore, but developer responded that it was never supposed to work. So not an actual bug?)
+(Users complain about a 'bug', some functionality not working anymore, but developer responded that it was never supposed to work. So not an actual bug? maybe relevant regardless, bc it used to work partially though not intended, but then stopped working)
+Release 2026.2.1-full from 1 feb 2026
 
-XXXXXXXXXXXX
+qark --java ../../android_java_folders/android-2026.2.1
 
-**X**
+**duckduckgo-5.55.1-release.apk**
 26. Connection refused when using WireGuard,https://github.com/duckduckgo/Android/issues/887,duckduckgo/Android,Attacker-Controlled URL Loaded in WebView,"bug, needs triage"
 (Issue marked as completed. Seemed the cause was user's own device. So not actually relevant?)
+Release 5.55.1 (55501) from 21 may 2020
 
-XXXXXXXXXXXXXXXXXX
+qark --java ../../android_java_folders/DDG-Android-5.55.1
 
 **X**
 124. Android 15: ContentResolver.query returns null from hooked app to external ContentProvider,https://github.com/JingMatrix/Vector/issues/253,JingMatrix/Vector,Debug Settings Left Enabled in Production,bug
-(Issue april 19 2025. Release 1.10.1 718. Owner responded its not an issue with their app)
+(Issue april 19 2025. Release 1.10.1 718 from 16 oct 2024. Owner responded its not an issue with their app. Issue was moved to discussions, where someone replied that the problem was due to an Android update.)
 
-XXXXXXXXXXXXX
+Folders: Vector-1.10.1 (source code), LSPOSED-v1.10.1-7115-zygisk-release
 
-**X**
+qark --java ../../android_java_folders/LSPOSED-v1.10.1-7115-zygisk-release
+
+
+**Fulguris-v1.8.7-slions-full-download-release.apk**
 125. Some images not loading in incognito mode,https://github.com/Slion/Fulguris/issues/368,Slion/Fulguris,Insecure Mixed Content Handling,"bug, user"
 (Issue april 24 2022. No release specified in issue, so taking release 1.8.7 based on date from https://slions.net/resources/fulguris.10/history).
 
@@ -174,10 +189,23 @@ Maximum recursion error!!!
 
 **X**
 126. Qi Scans Bug,https://github.com/keiyoushi/extensions-source/issues/12123,keiyoushi/extensions-source,Insecure Mixed Content Handling,Bug
-(Issue dec 10 2025. Release 1.4.12 OR 0.19.3 ??)
+(Issue dec 10 2025. Release 1.4.12 for Qi Scans OR 0.19.3 ?? Dont know which is relevant, as this doesn't seem to be a standalone app, but an extension used by others.)
+Possibly commit from 2025-11-07, as they mention app.mihon App version 0.19.3 with that date.
 
-NO official releases. CANNOT figure out which commit is relevant
-XXXXXXXXXXXXXXX
+In the fix for the bug, these files were changed:
+src/en/qiscans/src/eu/kanade/tachiyomi/extension/en/qiscans/QiScans.kt
+AND;
+src/en/qiscans/build.gradle
+
+Only first file seems relevant for ordering. The last time it was edited before the fix was on 8 dec 2025, commit hash 9f869275ae054080eeb06e12505f693b5e83bcee.
+I think that's the relevant commit.
+NO official releases.
+
+https://github.com/Riztard/extensions-source/tree/9f869275ae054080eeb06e12505f693b5e83bcee
+
+qark --java ../../android_java_folders/extensions-source-9f869275a
+
+e054080eeb06e12505f693b5e83bcee
 
 **pairdrop-android-1.12.0 folder**
 130. [Pairdrop] use pairdrop native file share preview ,https://github.com/fm-sys/pairdrop-android/issues/274,fm-sys/pairdrop-android,Attacker-Controlled URL Loaded in WebView,"bug, PairDrop speciffic"
@@ -185,15 +213,25 @@ XXXXXXXXXXXXXXX
 
 qark --java ../../pairdrop-android-1.12.0
 
-**X**
+**extensions-source-a4b215a**
 131. Mangacrab not loading pages,https://github.com/keiyoushi/extensions-source/issues/9978,keiyoushi/extensions-source,Attacker-Controlled URL Loaded in WebView,Bug
-(Issue august 4 2025.)
+(Issue august 4 2025.
+Mangacrab 1.4 55
+Mihon/Tachiyomi version 0.18.0)
 
-This doesn't have releases, and I have no idea how to figure out which files/commit is relevant XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Again, no official releases.
+Two relevant files changed in fix-commit:
+lib-multisrc/madara/src/eu/kanade/tachiyomi/multisrc/madara/Madara.kt
+Bug possibly present in commit a4b215a52c9caac41a9825300389711cc1344ddb (28 jul 2025) based on changed code
+AND
+src/es/mangacrab/src/eu/kanade/tachiyomi/extension/es/mangacrab/MangaCrab.kt
+Bug possible present in commit c240bf8800bcc2ea4112916b2136dd2d2bd4b579 (20 jul 2025) based on changed code.
 
+Taking code from commit on 28 jul 2025, due to it being the latest commit with one of the relevant files before bug fixed.
+https://github.com/dngonz/extensions-source/tree/a4b215a52c9caac41a9825300389711cc1344ddb
+short: a4b215a
 
-## APKs for wDroid (MOVE LATER) ##
-4, 5, 9, 32, 41, 44, 49, 52, 54, 58, 60, 63, 64, 65, 66, 67, 68, 69, 72, 75, 78, 79, 80, 81, 82, 83, 84, 85, 91, 97, 107, 108, 109, 112, 113, 114, 115, 116, 117, 118, 129, 138, 142, 143, 144, 149
+qark --java ../../android_java_folders/extensions-source-a4b215a
 
 ## How the tool works - UNFINISHED NOTES ##
 In qark/qark.py, they use 'click', a package for creating command line interfaces. The @click.option() lets you set a flag, that saves the passed value. 

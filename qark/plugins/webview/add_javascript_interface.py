@@ -29,8 +29,13 @@ class AddJavascriptInterface(CoroutinePlugin, ManifestPlugin):
         return self.min_sdk <= 16
 
     def run_coroutine(self):
+        '''
+        The yield keyword is used to create generators. Special types of iterators that allow values to be produced one at a time, instead of all at once, and it remembers where it left off.
+        '''
         while True:
             _, method_invocation = (yield)
+            '''best I can guess here is that the method_invocation is from the AST. It checks if the current method in the AST is equal to "addJavascriptInterface" from line 26, with the expected nr. of parameters (2). This plugin also only runs for sdks <= 16. 
+            '''
             if valid_method_invocation(method_invocation, method_name=self.java_method_name, num_arguments=2):
                 self.issues.append(Issue(category=self.category, name=self.name, severity=self.severity,
                                          description=self.description, line_number=method_invocation.position,
